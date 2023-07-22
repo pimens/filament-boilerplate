@@ -15,15 +15,12 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
 
-   
         User::create([
             'name' => 'admin',
             'opd_id' => '1',
             'email' => 'admin@mail.com',
             'password' => Hash::make('password'),
         ]);
-
-      
         $this->call([
             OpdSeeder::class,
         ]);
