@@ -1,6 +1,8 @@
 <?php
 
 namespace Database\Seeders;
+use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -12,12 +14,16 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // \App\Models\User::factory(10)->create();
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+   
+        User::create([
+            'name' => 'admin',
+            'opd_id' => '1',
+            'email' => 'admin@mail.com',
+            'password' => Hash::make('password'),
+        ]);
+
+      
         $this->call([
             OpdSeeder::class,
         ]);
